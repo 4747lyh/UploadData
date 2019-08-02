@@ -76,6 +76,16 @@ DataFrameToORC = function (
   
   , NumOnePack = 500){
   
+  #CheckParameter
+    
+  if(!exists("JDBCClassPath")) stop("DataFrame not exists")
+  if(!exists("Url")) stop("Url not exists")
+  if(!exists("Id")) stop("Id not exists")
+  if(!exists("Pw")) stop("Pw not exists")
+  if(!exists("Owner")) stop("Owner not exists")
+  if(!exists("Table")) stop("Table not exists")
+  if(!exists("DataOnR")) stop("DataOnR not exists")
+  
   #options
   
   list.of.packages <- c("plyr", "dplyr","data.table", "stringr","readr",
@@ -91,14 +101,7 @@ DataFrameToORC = function (
   memory.limit(5000000)
   
   options(scipen = 999)
-  
-  if(!exists("JDBCClassPath")) stop("DataFrame not exists")
-  if(!exists("Url")) stop("Url not exists")
-  if(!exists("Id")) stop("Id not exists")
-  if(!exists("Pw")) stop("Pw not exists")
-  if(!exists("Owner")) stop("Owner not exists")
-  if(!exists("Table")) stop("Table not exists")
-  if(!exists("DataOnR")) stop("DataOnR not exists")
+
   
   DataOnR <- data.frame(DataOnR) %>% mutate_if(is.factor, as.character)
   
