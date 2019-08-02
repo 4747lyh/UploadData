@@ -78,13 +78,13 @@ DataFrameToORC = function (
   
   #CheckParameter
     
-  if(!exists("JDBCClassPath")) stop("DataFrame not exists")
-  if(!exists("Url")) stop("Url not exists")
-  if(!exists("Id")) stop("Id not exists")
-  if(!exists("Pw")) stop("Pw not exists")
-  if(!exists("Owner")) stop("Owner not exists")
-  if(!exists("Table")) stop("Table not exists")
-  if(!exists("DataOnR")) stop("DataOnR not exists")
+  if(!exists("JDBCClassPath")) stop("DataFrame do not exist")
+  if(!exists("Url")) stop("Url do not exist")
+  if(!exists("Id")) stop("Id do not exist")
+  if(!exists("Pw")) stop("Pw do not exist")
+  if(!exists("Owner")) stop("Owner do not exist")
+  if(!exists("Table")) stop("Table do not exist")
+  if(!exists("DataOnR")) stop("DataOnR do not exist")
   
   #options
   
@@ -274,7 +274,7 @@ FileToORC = function(
   
   if(file.exists(FileName)==FALSE) stop("FileName must be inpupted")
   
-  if(grepl(".rds|.txt|.csv", FileName)) stop("File seperator must be .rds or .txt or .csv")
+  if(grepl(".rds|.txt|.csv", FileName)) stop("File seperator must be .rds or .txt or .csv at present")
   
   if (grepl(".rds", FileName))  DataOnR = readRDS(FileName)
   
