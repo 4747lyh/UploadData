@@ -188,7 +188,7 @@ DataFrameToORC = function (
   
   cat("\n Loop Start Times ", Start)
   
-  
+  pb <- txtProgressBar(min = 0, max = max(DataOnR$Seq), style=3)
   
   foreach(i = 1:max(DataOnR$Seq),
           
@@ -199,7 +199,7 @@ DataFrameToORC = function (
           .noexport = "conn",
           
           .errorhandling = "stop") %dopar% {
-            
+         setTxtProgressBar(pb, i)
          SubSet <- DataOnR %>% filter(Seq == i) %>% select(-Seq)
          db_write_table(conn, Owner, Table, SubSetData)
           
@@ -210,6 +210,8 @@ DataFrameToORC = function (
   
   clusterEvalQ(cl, {dbDisconnect(conn)})
   
+  close(pb)
+
   stopCluster(cl)
   
   
