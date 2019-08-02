@@ -16,7 +16,7 @@
 
 #' @param Table Table must be inppted. What is the table name?
 
-#' @param Truncate default is FALSE. TRUE is that rows from uploading table delete.
+#' @param Truncate default is TRUE. FALSE is that rows from uploading table does not delete.
 
 #' @param DataOnR DataOnR must be inppted. What is the data name which uploading in the table?
 
