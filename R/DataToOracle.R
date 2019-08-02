@@ -296,7 +296,7 @@ FileToORC = function(
     
     , Truncate = Truncate
     
-    , DataOnR
+    , DataOnR = DataOnR
     
     , NCore = NCore
     
