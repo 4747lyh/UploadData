@@ -272,7 +272,7 @@ FileToORC = function(
   
   options(scipen = 999)
   
-  if(file.exists(FileName)==FALSE) stop("FileName must be inpupted")
+  if(!file.exists(FileName)) stop("FileName do not exist")
   
   if(grepl(".rds|.txt|.csv", FileName)) stop("File seperator must be .rds or .txt or .csv at present")
   
